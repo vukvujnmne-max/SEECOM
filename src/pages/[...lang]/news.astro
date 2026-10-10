@@ -1,0 +1,150 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/uswds/Breadcrumb.astro';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { lang: undefined },
+      props: { locale: 'en' as Locale },
+    },
+  ];
+}
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const title = 'News';
+const description =
+  'An archive of SEECOM conferences, events and activities.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'News', href: '/news/' },
+];
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <div class="grid-container">
+<Breadcrumb items={breadcrumbs} />
+
+    <div class="grid-row grid-gap">
+      <main class="desktop:grid-col-12 usa-prose">
+        <h1>News</h1>
+
+        <p>
+          An archive of SEECOM conferences, events and activities.
+        </p>
+
+        <article class="seecom-news-item">
+          <h2>
+            2nd South Eastern European Government Communications Conference
+          </h2>
+
+          <p class="seecom-news-date">
+            27–29 September 2013 · Budva, Montenegro
+          </p>
+
+          <div class="grid-row grid-gap">
+            <div class="tablet:grid-col-5">
+              <figure class="seecom-news-figure">
+                <img
+                  src="/images/seecom-conference-budva-2013.jpg"
+                  alt="Participants at the second South Eastern European Government Communications Conference in Budva, September 2013"
+                  loading="lazy"
+                />
+                <figcaption>
+                  The second South Eastern European Government Communications
+                  Conference, Budva, Montenegro, September 2013.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="tablet:grid-col-7 seecom-justified">
+              <p>
+                The second South Eastern European Government Communications
+                Conference brought together government communicators from
+                13 countries in the region. Discussions addressed public
+                communication as a public service, communication resources,
+                two-way communication, citizen participation, social media,
+                EU affairs, the presentation of public policies and regional
+                cooperation.
+              </p>
+
+              <p>
+                Participants adopted the Statute establishing SEECOM as a
+                non-profit professional association based in Budva.
+              </p>
+
+              <p>
+                The conference was organised by the Government of Montenegro
+                in cooperation with the US Embassy in Podgorica, the
+                Konrad-Adenauer-Stiftung Media Programme South East Europe,
+                the Regional Cooperation Council and UNDP Montenegro.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <hr class="seecom-news-divider" />
+
+        <article class="seecom-news-item">
+          <h2>
+            1st South Eastern European Government Communications Conference
+          </h2>
+
+          <p class="seecom-news-date">
+            14–16 September 2012 · Budva, Montenegro
+          </p>
+
+          <div class="grid-row grid-gap">
+            <div class="tablet:grid-col-5">
+              <figure class="seecom-news-figure">
+                <img
+                  src="/images/seecom-conference-budva-2012.jpg"
+                  alt="Participants at the first South Eastern European Government Communications Conference in Budva, September 2012"
+                  loading="lazy"
+                />
+                <figcaption>
+                  The first South Eastern European Government Communications
+                  Conference, Budva, Montenegro, September 2012.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="tablet:grid-col-7 seecom-justified">
+              <p>
+                The first South Eastern European Government Communications
+                Conference brought together officials from nine South East
+                European countries and experts from Europe and the United
+                States.
+              </p>
+
+              <p>
+                The conference adopted the Budva Declaration, setting out
+                shared professional and ethical principles for government
+                communication, and established SEECOM as a regional
+                professional forum.
+              </p>
+
+              <p>
+                The event was organised by the Government of Montenegro,
+                UNDP Montenegro and the Konrad-Adenauer-Stiftung Media
+                Programme South East Europe. Welcome remarks were delivered
+                by Prime Minister Igor Lukšić, US Ambassador Sue K. Brown,
+                UN Resident Coordinator Rastislav Vrbensky and
+                Henri-Giscard Bohnet, Head of the Konrad-Adenauer-Stiftung
+                office.
+              </p>
+            </div>
+          </div>
+        </article>
+      </main>
+    </div>
+  </div>
+</BaseLayout>

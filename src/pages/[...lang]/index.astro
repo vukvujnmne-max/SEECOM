@@ -1,0 +1,84 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../config/site';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { lang: undefined },
+      props: { locale: 'en' as Locale },
+    },
+  ];
+}
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const title = 'SEECOM | South East Europe Public Sector Communication Forum';
+const description =
+  'SEECOM is an international professional forum for public sector communicators in South East Europe, promoting professional exchange, ethical standards and good governance.';
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <section class="usa-hero" aria-label="SEECOM introduction">
+    <div class="grid-container">
+      <div class="usa-hero__callout">
+        <h1 class="usa-hero__heading">
+          <span class="usa-hero__heading--alt">SEECOM</span>
+          Public Sector Communication in South East Europe
+        </h1>
+        <p>
+          An international professional forum promoting the exchange of
+          experience, high ethical standards and effective communication
+          between public institutions and citizens.
+        </p>
+        <a class="usa-button" href="/about/">
+          Discover SEECOM
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="usa-section">
+    <div class="grid-container">
+      <div class="grid-row grid-gap">
+        <div class="tablet:grid-col-8">
+          <h2>About SEECOM</h2>
+          <div class="usa-prose">
+            <p>
+              Established in Budva, Montenegro, in 2012, SEECOM brings
+              together public sector communicators from across South East
+              Europe. The forum supports professional exchange and
+              cooperation, helping strengthen communication with citizens
+              and promote good governance.
+            </p>
+            <p>
+              Its founding values are set out in the Budva Declaration,
+              adopted in September 2012.
+            </p>
+            <p>
+              <a class="usa-link" href="/about/">Learn more about SEECOM</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="tablet:grid-col-4">
+          <div class="bg-base-lightest padding-3">
+            <h2 class="font-heading-lg">Explore SEECOM</h2>
+            <ul class="usa-list">
+              <li><a href="/founding-principles/">Founding Principles</a></li>
+              <li><a href="/milestones/">Milestones</a></li>
+              <li><a href="/news/">News and Events Archive</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

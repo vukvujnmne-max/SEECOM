@@ -1,0 +1,26 @@
+
+---
+import { siteConfig } from '../../config/site';
+---
+
+<footer class="usa-footer usa-footer--slim">
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container">
+      <div class="grid-row grid-gap">
+        <div class="tablet:grid-col-8">
+          <p class="usa-footer__logo-heading">
+            {siteConfig.name}
+          </p>
+          <p class="seecom-footer-description">
+            International forum for professional exchange among public sector communicators in South East Europe
+          </p>
+        </div>
+        <div class="tablet:grid-col-4">
+          <p class="seecom-footer-copyright">
+            © {new Date().getFullYear()} SEECOM
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

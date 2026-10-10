@@ -1,0 +1,246 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/uswds/Breadcrumb.astro';
+import type { Locale } from '../../i18n/utils';
+import { localeStaticPaths } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const title = 'Founding Principles';
+const description =
+  'The Budva Declaration: SEECOM’s founding values and professional and ethical principles of government communication.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Founding Principles', href: '/founding-principles/' },
+];
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <div class="grid-container usa-section">
+    <div class="grid-row">
+      <div class="grid-col-12 tablet:grid-col-8">
+        <Breadcrumb items={breadcrumbs} />
+
+        <h1>Founding Principles</h1>
+
+        <div class="usa-prose seecom-justified">
+          <p>
+            SEECOM’s founding values are enshrined in the Budva Declaration,
+            Europe’s first transnational declaration of core professional and
+            ethical principles of government communication. It was adopted by
+            a group of senior government communication officials at the First
+            South East Europe Government Communication Conference in Budva,
+            Montenegro, in September 2012.
+          </p>
+
+          <h2 class="seecom-declaration-title">
+            DECLARATION OF FOUNDING VALUES OF THE SOUTH EASTERN EUROPEAN
+            GOVERNMENT COMMUNICATIONS FORUM
+          </h2>
+
+<p class="seecom-declaration-subtitle">
+  <strong>(“The Budva Declaration”)</strong></p>
+
+          <p>
+            <strong>Affirming</strong> our commitment to democratic and European
+            values, regional cooperation, and good neighbourly relations based
+            on the principles of, inter alia, the UN Charter and other
+            applicable international agreements;
+          </p>
+
+          <p>
+            <strong>Convinced</strong> of the importance of promoting networking,
+            dialogue and peer support for professional development of
+            government communicators and advancement of government
+            communication profession in general;
+          </p>
+
+          <p>
+            <strong>Aware</strong> of the need to pursue the highest and most
+            contemporary standards of our profession;
+          </p>
+
+          <p>
+            <strong>Having regard</strong> to the increasingly important role of
+            the public in government policy making;
+          </p>
+
+          <p>
+            <strong>Recognising</strong> the need to foster two-way communication
+            between governments and citizens;
+          </p>
+
+          <p>
+            <strong>Emphasising</strong> the importance of government
+            transparency, free access to information, greater public
+            participation in policy making, and the use of modern technology
+            and communication tools to achieve them;
+          </p>
+
+          <p>
+            <strong>Acknowledging</strong> the duty of government communicators
+            to provide the public with comprehensive, timely and accurate
+            information about government policies and projects;
+          </p>
+
+          <p>
+            We the government communication professionals of the countries of
+            South Eastern Europe, by adopting this Declaration, express our
+            private and professional endorsement of and commitment to the
+            following principles as the founding values of the South Eastern
+            European Government Communication Forum.
+          </p>
+
+ <p class="seecom-principle-title">
+  <strong>Transparency and Openness.</strong>
+</p>
+
+          <p>
+            Government communication should provide easy access to
+            comprehensive, truthful and timely information on government
+            activities and should attempt to keep government open, accessible,
+            and understandable to the publics.
+          </p>
+
+          <p>
+            Government communication should promote government openness by
+            facilitating access to information on government activities
+            through all available means of communication and by taking full
+            advantage of the technological progress in so doing.
+          </p>
+
+   <p class="seecom-principle-title">
+  <strong>Inclusiveness and Participation.</strong></p>
+
+          <p>
+            Government communication should encourage citizen participation
+            in policy making, attract public interest in government work, and
+            enable direct communication between government and citizens.
+          </p>
+
+          <p>
+            Government communication should promote open governance and open
+            public administration and institutions.
+          </p>
+
+          <p>
+            An important role of government communicators is to provide
+            channels for the public to influence policy making processes.
+          </p>
+
+          <p>
+            Government communication should engage citizens actively in the
+            work of their government, and act towards ensuring citizens’
+            satisfaction with their involvement by providing, among other
+            things: feedback on the outcomes of citizens’ participation,
+            promotion of results achieved through collaboration, and advocacy
+            for continued cooperation between government and citizens.
+          </p>
+
+ <p class="seecom-principle-title">
+  <strong>Integrity, impartiality and public interest.</strong>
+          </p>
+
+          <p>
+            Government communication should be performed in a way that
+            preserves the integrity and impartiality of public institutions
+            and serves the public interest.
+          </p>
+
+          <p>
+            Government communicators should always act in a way that sustains
+            the public’s long-term trust and confidence in government
+            information and communication.
+          </p>
+
+ <p class="seecom-principle-title">
+  <strong>Internal communication.</strong></p>
+
+          <p>
+            In order to be able to perform their duties, government
+            communicators should seek to enhance the level of internal
+            communication between government departments.
+          </p>
+
+          <p>
+            Internal communication should serve to enhance timely exchange of
+            information between departments, which should in turn result in
+            more effective communication with the public, and in other ways
+            ensure the above principles of Transparency and Openness and
+            Inclusiveness and Participation.
+          </p>
+
+ <p class="seecom-principle-title">
+  <strong>Professional exchange and cooperation.</strong></p>
+
+          <p>
+            Considering that good government communication practices are
+            inextricably associated with good governance, government
+            communicators should aim to maintain regular and close interaction
+            with their peers from the region and the world by exchanging best
+            communication practices.
+          </p>
+
+          <p>
+            The rising interconnectedness and shared interests should guide
+            communication professionals towards seeking and offering
+            assistance, providing best services, and joining forces in solving
+            issues.
+          </p>
+
+ <p class="seecom-principle-title">
+  <strong>Innovative approach</strong></p>
+
+          <p>
+            Government communicators should rely on innovations and
+            technological advancements to promote and enhance communication
+            between people and government.
+          </p>
+
+ <p class="seecom-principle-title">
+  *</p>
+
+          <p>
+            This Declaration is a legally non-binding agreement between the
+            government communication professionals from the countries of
+            South Eastern Europe, whereby we vow to ensure commitment to the
+            highest professional standards and values of democratic
+            governance, as contained in the principles of this Declaration,
+            and to convene periodically in this forum to discuss the furthering
+            of these principles and of our cooperation.
+          </p>
+
+          <p>
+            The founding South East Europe Government Communication Conference
+            leaves us determined to implement the key principles contained in
+            this Declaration with a view to influencing government policies
+            towards greater transparency and openness, better access to
+            information and greater public participation in policy making,
+            which we hope in turn to advance the level of participatory
+            democracy in the region.
+          </p>
+
+          <p>
+            By adopting this Declaration, we endorse the above as the founding
+            values of the Forum.
+          </p>
+
+<p class="seecom-declaration-signature">
+  In Budva, Montenegro<br />
+            16 September 2012
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

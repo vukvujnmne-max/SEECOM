@@ -1,0 +1,101 @@
+---
+import type { Locale } from '../../i18n/utils';
+import { useTranslations, localizeUrl } from '../../i18n/utils';
+import { siteConfig } from '../../config/site';
+
+
+interface NavLink {
+  label: string;
+  href: string;
+  current?: boolean;
+}
+
+interface Props {
+  locale?: Locale;
+  currentPath?: string;
+}
+
+const { locale = 'en', currentPath = '/' } = Astro.props;
+const t = useTranslations(locale);
+const base = import.meta.env.BASE_URL;
+
+const navLinks: NavLink[] = [
+  {
+    label: 'About SEECOM',
+    href: '/about/',
+    current: currentPath === '/about/',
+  },
+  {
+    label: 'Founding Principles',
+    href: '/founding-principles/',
+    current: currentPath === '/founding-principles/',
+  },
+  {
+    label: 'Milestones',
+    href: '/milestones/',
+    current: currentPath === '/milestones/',
+  },
+  {
+    label: 'News',
+    href: '/news/',
+    current: currentPath === '/news/',
+  },
+  {
+    label: 'Contact',
+    href: '/contact/',
+    current: currentPath === '/contact/',
+  },
+];
+
+---
+
+<header class="usa-header usa-header--basic">
+  <div class="usa-nav-container">
+<div class="usa-logo">
+  <a href={localizeUrl('/', locale)} aria-label="SEECOM" class="seecom-brand">
+    <img
+      src="/images/SEECOM Logo cropped.png"
+      alt="SEECOM"
+      class="seecom-logo"
+    />
+    <span class="seecom-name">South East Europe Public Sector Communication Forum</span>
+  </a>
+</div>
+
+
+
+      <button
+        type="button"
+        class="usa-menu-btn"
+        aria-label={t('nav.menu')}
+      >
+        {t('nav.menu')}
+      </button>
+    </div>
+
+    <nav
+      aria-label={t('nav.primary')}
+      class="usa-nav"
+    >
+      <button type="button" class="usa-nav__close" aria-label={t('nav.close')}>
+        <img src={`${base}uswds/img/usa-icons/close.svg`} role="img" alt="" />
+      </button>
+
+      <ul class="usa-nav__primary usa-accordion">
+        {navLinks.map((link) => (
+          <li class="usa-nav__primary-item">
+            <a
+              href={link.href}
+              class:list={['usa-nav-link', { 'usa-current': link.current }]}
+              aria-current={link.current ? 'page' : undefined}
+            >
+              <span>{link.label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+
+
+</header>

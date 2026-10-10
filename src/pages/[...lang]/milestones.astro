@@ -1,0 +1,343 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/uswds/Breadcrumb.astro';
+import type { Locale } from '../../i18n/utils';
+import { localeStaticPaths } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const title = 'Milestones';
+const description =
+  'Key conferences and milestones in the development of the South East Europe Public Sector Communication Forum.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Milestones', href: '/milestones/' },
+];
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <div class="grid-container usa-section">
+    <div class="grid-row">
+      <div class="grid-col-12">
+        <Breadcrumb items={breadcrumbs} />
+
+        <h1>SEECOM Milestones</h1>
+
+        <div class="usa-prose seecom-justified">
+          <p>
+            From its beginnings in Budva in 2012, SEECOM has brought together
+            public sector communication professionals to exchange experience,
+            strengthen professional standards and build cooperation across
+            South East Europe.
+          </p>
+        </div>
+
+        <article class="seecom-milestone">
+          <h2>
+            Government communicators in South East Europe agree on core
+            professional and ethical principles
+          </h2>
+
+          <div class="grid-row grid-gap">
+            <div class="tablet:grid-col-5">
+              <figure class="seecom-milestone-figure">
+                <img
+                  src="/images/seecom-conference-budva-2012.jpg"
+                  alt="The First South Eastern European Government Communication Conference in Budva, Montenegro, September 2012"
+                  loading="lazy"
+                />
+                <figcaption>
+                  The First South Eastern European Government Communication
+                  Conference, Budva, Montenegro, September 2012.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="tablet:grid-col-7">
+              <div class="usa-prose seecom-justified">
+                <h3>
+                  1st South Eastern European Government Communications
+                  Conference
+                </h3>
+
+                <p>
+                  The 1st South Eastern European Government Communication
+                  Conference (SEECOM) took place in Budva, Montenegro, on
+                  14–16 September 2012.
+                </p>
+
+                <p>
+                  The event brought together top government communication
+                  officials from nine countries of South East Europe and
+                  leading government communication experts from Europe and
+                  the United States to exchange experiences and share best
+                  practices in government communication.
+                </p>
+
+                <p>
+                  Participants adopted the Budva Declaration, Europe's first
+                  transnational declaration of core professional and ethical
+                  principles of government communication, and established
+                  SEECOM as a regional professional forum for government
+                  communications.
+                </p>
+
+                <p>
+                  The conference was organised by the Government of
+                  Montenegro, the United Nations Development Programme
+                  (UNDP) in Montenegro and the Konrad Adenauer Stiftung
+                  Media Programme for South East Europe.
+                </p>
+
+                <p>
+                  Welcome remarks were delivered by then Prime Minister of
+                  Montenegro Igor Lukšić, US Ambassador to Montenegro Sue K.
+                  Brown, UN Resident Coordinator Rastislav Vrbensky and Head
+                  of the Konrad Adenauer Stiftung Office for Serbia and
+                  Montenegro Henri-Giscard Bohnet.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <hr class="seecom-milestone-divider" />
+
+        <article class="seecom-milestone">
+          <h2>
+            SEECOM gains momentum and expands regional cooperation
+          </h2>
+
+          <div class="grid-row grid-gap">
+            <div class="tablet:grid-col-5">
+              <figure class="seecom-milestone-figure">
+                <img
+                  src="/images/seecom-conference-budva-2013.jpg"
+                  alt="Participants at the Second South Eastern European Government Communication Conference in Budva, Montenegro, September 2013"
+                  loading="lazy"
+                />
+                <figcaption>
+                  Participants at the Second South Eastern European
+                  Government Communication Conference, Budva, Montenegro,
+                  September 2013.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="tablet:grid-col-7">
+              <div class="usa-prose seecom-justified">
+                <h3>
+                  2nd South Eastern European Government Communications
+                  Conference
+                </h3>
+
+                <p>
+                  The 2nd South Eastern European Government Communication
+                  Conference (SEECOM 2013) took place in Budva, Montenegro,
+                  on 27–29 September 2013, bringing together leading
+                  government communicators from 13 countries of the region.
+                </p>
+
+                <p>
+                  Participants also included senior government officials,
+                  international dignitaries and prominent government
+                  communication experts from Europe and the United States.
+                </p>
+
+                <p>
+                  Conference topics included government communication as a
+                  public service, the effective use of public communication
+                  resources, modern technology and two-way communication,
+                  citizen participation, social media, communicating EU
+                  affairs, presenting public policies and regional
+                  cooperation.
+                </p>
+
+                <p>
+                  The conference adopted the Statute of SEECOM, establishing
+                  it as a non-profit professional association of public
+                  sector communicators in South East Europe, based in Budva,
+                  Montenegro.
+                </p>
+
+                <p>
+                  SEECOM 2013 was organised by the Government of Montenegro,
+                  in cooperation with the US Embassy in Podgorica, the
+                  Konrad Adenauer Stiftung Media Programme South East Europe,
+                  the Regional Cooperation Council (RCC) and UNDP Montenegro.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <hr class="seecom-milestone-divider" />
+
+        <article class="seecom-milestone">
+          <h2>SEECOM reaches out to civil society partners</h2>
+
+          <div class="grid-row grid-gap">
+            <div class="tablet:grid-col-5">
+              <figure class="seecom-milestone-figure">
+                <img
+                  src="/images/government-2-conference-sarajevo-2014.JPG"
+                  alt="Government 2.0 Conference in Sarajevo, Bosnia and Herzegovina, March 2014"
+                  loading="lazy"
+                />
+                <figcaption>
+                  Government 2.0 Conference, Sarajevo, Bosnia and Herzegovina,
+                  March 2014.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="tablet:grid-col-7">
+              <div class="usa-prose seecom-justified">
+                <h3>Government 2.0 Conference</h3>
+
+                <p>
+                  In March 2014, SEECOM partnered with Propulsion Fund and
+                  the US Embassy in Bosnia and Herzegovina to organise the
+                  Government 2.0 Conference in Sarajevo.
+                </p>
+
+                <p>
+                  The conference brought together representatives of
+                  government, civil society and other stakeholders to
+                  explore how new technologies and two-way communication
+                  can strengthen citizen participation and engagement in
+                  public policy.
+                </p>
+
+                <p>
+                  Discussions also addressed transparent and accountable
+                  local government and ways to build public trust. The
+                  event reflected SEECOM's efforts to strengthen
+                  cooperation between public institutions and civil
+                  society and promote more open, participatory and
+                  responsive governance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <hr class="seecom-milestone-divider" />
+
+        <article class="seecom-milestone">
+          <h2>Montenegro turns a SEECOM conference initiative into government action</h2>
+
+          <div class="grid-row grid-gap">
+            <div class="tablet:grid-col-5">
+              <figure class="seecom-milestone-figure">
+                <img
+                  src="/images/seecom-conference-budva-2014.jpg"
+                  alt="Participants at the SEECOM2014 conference in Budva, Montenegro, September 2014"
+                  loading="lazy"
+                />
+                <figcaption>
+                  SEECOM2014 conference, Budva, Montenegro, September 2014.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="tablet:grid-col-7">
+              <div class="usa-prose seecom-justified">
+                <h3>Public Administration Tailored to the Needs of Citizens and Businesses</h3>
+
+                <p>
+                  At the SEECOM2014 conference in Budva on 27 September 2014,
+                  participants explored how the United Kingdom’s Red Tape
+                  Challenge initiative could be adapted to Montenegro. The
+                  initiative aimed to bring citizens, businesses, civil
+                  society organisations and public authorities together to
+                  identify unnecessary administrative burdens and make public
+                  administration more responsive to their needs.
+                </p>
+
+                <p>
+                  On 9 November 2014, the Government of Montenegro officially
+                  endorsed the project, which envisaged an online platform
+                  for discussion and proposals to simplify procedures at
+                  local and central government levels.
+                </p>
+
+                <p>
+                  This was a concrete example of how the exchange of public
+                  communication practices at a SEECOM conference could
+                  contribute to a national policy initiative. It also
+                  reflected the forum’s ambition to encourage closer
+                  cooperation between public institutions and civil society,
+                  with citizens’ needs at the centre of policymaking.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <hr class="seecom-milestone-divider" />
+
+        <article class="seecom-milestone">
+          <h2>SEECOM takes its annual conference beyond South East Europe for the first time</h2>
+
+          <div class="grid-row grid-gap">
+            <div class="tablet:grid-col-5">
+              <figure class="seecom-milestone-figure">
+                <img
+                  src="/images/seecom-conference-brussels-2016.jpg"
+                  alt="Participants at the fourth SEECOM annual conference in Brussels, Belgium, October 2016"
+                  loading="lazy"
+                />
+                <figcaption>
+                  The fourth SEECOM annual conference, Brussels, Belgium,
+                  October 2016.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="tablet:grid-col-7">
+              <div class="usa-prose seecom-justified">
+                <h3>Public Dialogue for a Common European Future</h3>
+
+                <p>
+                  In October 2016, SEECOM held its fourth annual conference
+                  in Brussels, marking the first time the forum brought its
+                  regional gathering outside South East Europe. The event
+                  brought together senior public communicators from the
+                  region, their counterparts from across Europe, EU officials
+                  and civil society representatives.
+                </p>
+
+                <p>
+                  Discussions focused on how public communication and
+                  dialogue with citizens could help address shared European
+                  and regional challenges, including the rise of populism,
+                  the migration and refugee crisis, and the role of culture
+                  in European integration.
+                </p>
+
+                <p>
+                  Organised by SEECOM and the Konrad-Adenauer-Stiftung
+                  Media Programme South East Europe, in cooperation with
+                  the European Economic and Social Committee and the
+                  Committee of the Regions, the conference strengthened
+                  the forum’s engagement with the wider European
+                  communication community.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+
+      </div>
+    </div>
+  </div>
+</BaseLayout>

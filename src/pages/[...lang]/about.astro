@@ -1,0 +1,81 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/uswds/Breadcrumb.astro';
+import { siteConfig } from '../../config/site';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { lang: undefined },
+      props: { locale: 'en' as Locale },
+    },
+  ];
+}
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const title = 'About SEECOM';
+const description =
+  'Learn about SEECOM, an informal international professional forum for public sector communicators in South East Europe.';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'About SEECOM', href: '/about/' },
+];
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <div class="grid-container usa-section">
+    <div class="grid-row">
+      <div class="grid-col-12 tablet:grid-col-8">
+        <Breadcrumb items={breadcrumbs} />
+
+        <h1>About SEECOM</h1>
+
+<div class="usa-prose seecom-justified">
+<p>
+            SEECOM is an informal international professional forum established
+            in Budva, Montenegro, in 2012. It brings together public sector
+            communicators from South East Europe to promote high professional
+            and ethical standards in public sector communication and good
+            governance through the exchange of experience and expertise.
+          </p>
+
+          <p>
+            Its members include directors of government communications offices,
+            communications advisers to heads of government, government
+            spokespersons and other senior public sector communicators from
+            13 countries across South East Europe.
+          </p>
+
+          <p>
+            SEECOM’s credo is that effective communication with citizens helps
+            governments develop better policies — policies that are more
+            responsive to people’s actual needs, expectations and concerns.
+          </p>
+
+<p>
+  SEECOM’s founding values are set out in the Budva Declaration,
+  Europe’s first transnational declaration of core professional and
+  ethical principles of government communication. The Declaration
+  was adopted by senior government communication officials from
+  South East Europe at a conference in Budva, Montenegro, in
+  September 2012.
+</p>
+
+          <p>
+            After a period as a formally established association, SEECOM
+            continues today as an informal professional network, returning to
+            the model of professional exchange on which it was founded in 2012.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

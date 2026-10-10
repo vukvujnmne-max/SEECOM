@@ -1,0 +1,140 @@
+
+/*
+ * Global styles: Tailwind utilities + site-wide custom properties.
+ *
+ * USWDS is imported separately (uswds.scss) and provides the design foundation.
+ * Tailwind utilities are scoped to non-USWDS areas and never override USWDS tokens.
+ * If a Tailwind utility conflicts with a USWDS style, USWDS wins.
+ */
+
+/* Tailwind v4 — utilities layer only to avoid preflight conflicts with USWDS */
+@import "tailwindcss/utilities";
+
+/* Site-wide custom properties */
+:root {
+  --site-max-width: 1440px;
+  --focus-outline: 0.25rem solid #2491ff;
+  --focus-outline-offset: 0;
+}
+
+/* Skip navigation link — visually hidden until focused */
+.usa-skipnav {
+  &:focus {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
+
+/* Print styles */
+@media print {
+  .usa-banner,
+  .usa-header,
+  .usa-footer {
+    display: block;
+  }
+
+  .usa-nav,
+  .usa-banner__button {
+    display: none;
+  }
+}
+
+.seecom-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.seecom-logo {
+  display: block;
+  width: 180px;
+  height: auto;
+}
+
+.seecom-name {
+  display: block;
+  max-width: 280px;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.seecom-justified p {
+  text-align: justify;
+}
+
+.usa-prose h2.seecom-declaration-title {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 2rem 0 0.5rem;
+  padding: 0;
+  font-family: inherit;
+  font-size: 1.1rem !important;
+  line-height: 1.5;
+  font-weight: 600;
+  text-align: left;
+  text-indent: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.usa-prose .seecom-declaration-subtitle {
+  text-align: left;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.usa-prose .seecom-principle-title {
+  text-align: left;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.usa-prose .seecom-declaration-divider {
+  text-align: left;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.usa-prose .seecom-declaration-signature {
+  text-align: right;
+  margin-top: 2rem;
+}
+
+.seecom-milestone {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.seecom-milestone h2 {
+  margin-bottom: 1.5rem;
+}
+
+.seecom-milestone h3 {
+  margin-top: 0;
+}
+
+.seecom-milestone-figure {
+  margin: 0 0 1.5rem;
+}
+
+.seecom-milestone-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.seecom-milestone-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #565c65;
+}
+
+.seecom-milestone-divider {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid #dfe1e2;
+}

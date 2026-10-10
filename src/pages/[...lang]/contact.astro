@@ -1,0 +1,53 @@
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/uswds/Breadcrumb.astro';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { lang: undefined },
+      props: { locale: 'en' as Locale },
+    },
+  ];
+}
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const title = 'Contact SEECOM';
+const description =
+  'Contact the South East Europe Public Sector Communication Forum.';
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Contact' },
+];
+---
+
+<BaseLayout title={title} description={description} locale={locale}>
+  <div class="grid-container usa-section">
+    <Breadcrumb items={breadcrumbs} />
+
+    <div class="grid-row grid-gap">
+      <main class="tablet:grid-col-8">
+        <h1>Contact SEECOM</h1>
+
+        <div class="usa-prose">
+          <p>
+            For enquiries about SEECOM, its history, activities or
+            professional cooperation, please contact the forum by email.
+          </p>
+
+          <p>
+<strong>Email:</strong>{' '}
+<a href="mailto:seecominfo@gmail.com">seecominfo@gmail.com</a>
+          </p>
+        </div>
+      </main>
+    </div>
+  </div>
+</BaseLayout>
