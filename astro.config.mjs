@@ -9,7 +9,7 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 // Single source of truth for the locale set. Add new locales here, then see
 // "Adding a new language" in README.md for the remaining steps.
-const LOCALES = { en: 'en-US', es: 'es-US' };
+const LOCALES = { en: 'en-GB' };
 const DEFAULT_LOCALE = 'en';
 
 export default defineConfig({
