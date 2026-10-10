@@ -138,3 +138,47 @@
   border: 0;
   border-top: 1px solid #dfe1e2;
 }
+.seecom-home-hero {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #1b1b1b;
+}
+
+.seecom-home-hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.seecom-home-hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 40rem;
+  margin: 2rem auto 2rem  max(1rem, calc((100% - 1200px) / 2));
+  padding: 2rem;
+  color: #fff;
+  background: rgb(0 0 0 / 65%);
+}
+
+.seecom-home-hero__content h1 {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+.seecom-home-hero__content h1 span {
+  display: block;
+  color: #fdb81e;
+}
+
+.seecom-home-hero__content p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
